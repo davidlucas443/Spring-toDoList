@@ -1,4 +1,4 @@
-package com.todolist.todolist.entity;
+package com.todolist.todolist.repositories.entity;
 
 import jakarta.persistence.*;
 
@@ -7,13 +7,16 @@ import jakarta.persistence.*;
 
     @Table(name = "tb_usuario")
 
-    public class usuario {
+    public class Usuario {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
 
+        @Column(length = 100)
         private String nome;
+        @Column(length = 80, unique = true)
         private String email;
+        @Column(length = 50)
         private String senha;
 
     }
